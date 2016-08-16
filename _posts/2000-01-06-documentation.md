@@ -1,7 +1,7 @@
 ---
 title: "documentation"
-bg: gunmetal
-color: white
+bg: orange
+color: black
 fa-icon: book
 ---
 <h2>Reference material</h2>
