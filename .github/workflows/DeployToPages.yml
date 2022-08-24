@@ -42,7 +42,7 @@ jobs:
         - name: Upload artifact for deployment job
           uses: actions/upload-artifact@v3
           with:
-            name: docusaurus-app
+            name: github-pages
             path: ./ampersand-docs/build/
   # Single deploy job since we're just deploying
   deploy:
@@ -55,7 +55,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
-          name: docusaurus-app
+          name: github-pages
 
       - name: Checkout
         uses: actions/checkout@v3
