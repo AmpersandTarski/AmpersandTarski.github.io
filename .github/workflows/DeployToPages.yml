@@ -11,13 +11,16 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./ampersand-docs/
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: npm
-          cache-depenency-path: ampersand-docs/package-lock.json
+          cache-dependency-path: ampersand-docs/package-lock.json
 
       - name: Install dependencies
         run: npm ci
