@@ -30,6 +30,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Checkout Ampersand repo
+        uses: actions/checkout@v3
+        with:
+          repository: AmpersandTarski/Ampersand
+          ref: development
+          path: Ampersand
+
+      - name: Checkout Prototype repo
+        uses: actions/checkout@v3
+        with:
+          repository: AmpersandTarski/Prototype
+          ref: development
+          path: Prototype
+      
+      - run: |
+          cp ./Ampersand/docs/ ./ampersand-docs/docs/
+          cp ./Prototype/docs/ ./ampersand-docs/docs/
         
       - name: Setup Node
         uses: actions/setup-node@v3
