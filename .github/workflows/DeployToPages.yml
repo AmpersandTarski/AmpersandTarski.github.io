@@ -28,7 +28,7 @@ jobs:
         working-directory: ./ampersand-docs/
 
     steps:
-      - name: Checkout
+      - name: Checkout DocuGen repo
         uses: actions/checkout@v3
 
       - name: Checkout Ampersand repo
@@ -47,7 +47,7 @@ jobs:
       
       - run: |
           cp -R ../Ampersand/docs/* ./docs/
-        #  cp -R ../prototype/docs/* ./docs/
+          cp -R ../prototype/docs/* ./docs/
         
       - name: Setup Node
         uses: actions/setup-node@v3
