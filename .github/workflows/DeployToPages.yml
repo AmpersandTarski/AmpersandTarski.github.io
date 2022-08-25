@@ -47,7 +47,7 @@ jobs:
       
       - run: |
           cp -R ../Ampersand/docs/* ./docs/
-          cp -R ../prototype/docs/* ./docs/
+        #  cp -R ../prototype/docs/* ./docs/
         
       - name: Setup Node
         uses: actions/setup-node@v3
