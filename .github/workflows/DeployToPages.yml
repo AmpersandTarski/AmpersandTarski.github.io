@@ -46,8 +46,8 @@ jobs:
           path: prototype
       
       - run: |
-          cp ~/work/Ampersand/docs/ ./ampersand-docs/docs/
-          cp ~/work/prototype/docs/ ./ampersand-docs/docs/
+          cp /home/runner/work/DocuGen/DocuGen/Ampersand/docs/ ./ampersand-docs/docs/
+          cp /home/runner/work/DocuGen/DocuGen/prototype/docs/ ./ampersand-docs/docs/
         
       - name: Setup Node
         uses: actions/setup-node@v3
