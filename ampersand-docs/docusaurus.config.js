@@ -49,7 +49,7 @@ const config = {
         title: 'Ampersand',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/ampersand-logo.jpg',
         },
         items: [
           {
