@@ -44,10 +44,18 @@ jobs:
           repository: AmpersandTarski/prototype
           ref: development
           path: prototype
+
+      - name: Checkout TheToolsWeUse repo
+        uses: actions/checkout@v3
+        with:
+          repository: AmpersandTarski/TheToolsWeUse
+          ref: development
+          path: TheToolsWeUse
       
       - run: |
-          cp -R ../Ampersand/docs/* ./docs/
-          cp -R ../prototype/docs/* ./docs/
+          cp -R ../Ampersand/docs/* ./docs/Ampersand/
+          cp -R ../prototype/docs/* ./docs/prototype/
+          cp -R ../TheToolsWeUse/* ./docs/TheToolsWeUse/
         
       - name: Setup Node
         uses: actions/setup-node@v3
