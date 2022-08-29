@@ -53,9 +53,9 @@ jobs:
           path: TheToolsWeUse
       
       - run: |
-          rsync ../Ampersand/docs/* ./docs/Ampersand/
-          rsync ../prototype/docs/* ./docs/Prototype/
-          rsync ../TheToolsWeUse/* ./docs/TheToolsWeUse/
+          rsync -r ../Ampersand/docs/* ./docs/Ampersand/
+          rsync -r ../prototype/docs/* ./docs/Prototype/
+          rsync -r ../TheToolsWeUse/* ./docs/TheToolsWeUse/
         
       - name: Setup Node
         uses: actions/setup-node@v3
