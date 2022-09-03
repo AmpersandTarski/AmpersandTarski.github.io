@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy Docusaurus to Pages
+name: Deploy to Github pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -23,57 +23,25 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./ampersand-docs/
-
     steps:
-      - name: Checkout DocuGen repo
+      - name: Checkout repo
         uses: actions/checkout@v3
-
-      - name: Checkout Ampersand repo
-        uses: actions/checkout@v3
-        with:
-          repository: AmpersandTarski/Ampersand
-          ref: development
-          path: Ampersand
-
-      - name: Checkout Prototype repo
-        uses: actions/checkout@v3
-        with:
-          repository: AmpersandTarski/prototype
-          ref: development
-          path: prototype
-
-      - name: Checkout TheToolsWeUse repo
-        uses: actions/checkout@v3
-        with:
-          repository: AmpersandTarski/TheToolsWeUse
-          ref: development
-          path: TheToolsWeUse
       
-      - run: |
-          rsync -avzP ../Ampersand/docs/ ./docs/Ampersand/
-          rsync -avzP ../prototype/docs/ ./docs/Prototype/
-          rsync -avzP ../TheToolsWeUse/ ./docs/TheToolsWeUse/
-        
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: npm
-          cache-dependency-path: ./ampersand-docs/package-lock.json
+      - name: Docker build
+        run: docker build . -t documentation
 
-      - name: Install dependencies
-        run: npm ci
-      - name: Test build website
-        run: npm run build
+      - name: Extract static content
+        uses: shrink/actions-docker-extract@v1
+        id: extract
+        with:
+          image: documentation # from previous step
+          path: /usr/share/nginx/html/.
       
-      - name: Upload artifact for deployment job
+      - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: docusaurus
-          path: ./ampersand-docs/build/
+          name: static-content
+          path: ${{ steps.extract.outputs.destination }}
 
   # Single deploy job since we're just deploying
   deploy:
@@ -84,20 +52,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v3
-        with:
-          name: docusaurus
-
       - name: Setup Pages
         uses: actions/configure-pages@v1
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: "."
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-        
+        with:
+          artifact_name: static-content

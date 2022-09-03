@@ -9,7 +9,7 @@ const config = {
   title: 'Ampersand Documentation',
   tagline: 'check out the latest compiler on https://github.com/AmpersandTarski/Ampersand/releases/latest',
   url: 'https://ampersandtarski.github.io',
-  baseUrl: '/DocuGen/',
+  baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',

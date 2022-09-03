@@ -1,0 +1,18 @@
+name: Build test
+on:
+  push:
+    branches:
+      - '**'    # matches every branch
+      - '!main' # excludes main branch
+
+jobs:
+  build:
+    name: Docker build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build
+      run: docker build .
