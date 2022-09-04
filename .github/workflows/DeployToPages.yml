@@ -37,10 +37,12 @@ jobs:
           image: documentation # from previous step
           path: /usr/share/nginx/html/.
       
+      # Special upload-pages-artifact action that takes care of creating valid artifact for Github Pages
+      # Artifact is called 'github-pages'
+      # See: https://github.com/actions/upload-pages-artifact
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with:
-          name: static-content
           path: ${{ steps.extract.outputs.destination }}
 
   # Single deploy job since we're just deploying
@@ -52,22 +54,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v3
-        with:
-          name: static-content
-          path: content
-
       - name: Setup Pages
         uses: actions/configure-pages@v1
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: "content"
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-        # with:
-        #   artifact_name: static-content
+        with:
+          artifact_name: github-pages
