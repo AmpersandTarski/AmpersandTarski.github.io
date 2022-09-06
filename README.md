@@ -1,8 +1,8 @@
-# DocuGen
+# AmpersandTarski.github.io
 This repository contains the files and workflow needed to create a Docusaurus website for the Ampersand documentation.
 The Documentation is updated through the following workflows:
 
-1. [DocuGen](https://github.com/AmpersandTarski/DocuGen) contains `DeployToPages.yml`, a GitHub Action which retrieves the "docs" folders from [Ampersand](https://github.com/AmpersandTarski/Ampersand) and [Prototype](https://github.com/AmpersandTarski/Prototype) and deploys the Docusaurus Website to [GitHub Pages](https://ampersandtarski.github.io/DocuGen/).
+1. [AmpersandTarski.github.io](https://github.com/AmpersandTarski/AmpersandTarski.github.io) contains `DeployToPages.yml`, a GitHub Action which retrieves the "docs" folders from [Ampersand](https://github.com/AmpersandTarski/Ampersand) and [Prototype](https://github.com/AmpersandTarski/Prototype) and deploys the Docusaurus Website to [GitHub Pages](https://ampersandtarski.github.io/).
 2. [Ampersand](https://github.com/AmpersandTarski/Ampersand) contains `triggerDocsUpdate.yml`, a GitHub Action which triggers `DeployToPages.yml` on a push to the development (main) branch when changes are made to the "docs" folder.
 3. [Prototype](https://github.com/AmpersandTarski/Prototype) contains `triggerDocsUpdate.yml`, a GitHub Action which triggers `DeployToPages.yml` on a push to the development (main) branch when changes are made to the "docs" folder.
 
@@ -14,7 +14,7 @@ on:
 The workflow can then be triggered by a different workflow with the following code:
 
 ```
-# Workflow which triggers the workflow in DocuGen on changes to "Docs"
+# Workflow which triggers the workflow in AmpersandTarski.github.io on changes to "Docs"
 name: Trigger Documentation Update
 
 on:
@@ -29,10 +29,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    # Trigger the "DeployToPages" workflow in the "DocuGen" repository
+    # Trigger the "DeployToPages" workflow in the "AmpersandTarski.github.io" repository
       - run: |
           curl -XPOST -u "${{secrets.PAT_USERNAME}}:${{secrets.PAT_TOKEN}}" \
           -H "Accept: application/vnd.github.everest-preview+json" -H \
-          "Content-Type: application/json" https://api.github.com/repos/AmpersandTarski/DocuGen/actions/workflows/DeployToPages.yml/dispatches \
+          "Content-Type: application/json" https://api.github.com/repos/AmpersandTarski/AmpersandTarski.github.io/actions/workflows/DeployToPages.yml/dispatches \
           --data '{"ref": "main"}'
 ```
