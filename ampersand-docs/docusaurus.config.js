@@ -70,7 +70,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'hello-world',
+            docId: 'https://github.com/AmpersandTarski/Ampersand/docs/README.md',
             position: 'left',
             label: 'Docs',
           },
