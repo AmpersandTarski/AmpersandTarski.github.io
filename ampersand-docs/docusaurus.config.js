@@ -70,9 +70,9 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'hello-world',  /* should refer to 'https://github.com/AmpersandTarski/Ampersand/docs/README.md', */
+            docId: 'intro',
             position: 'left',
-            label: 'Docs',
+            label: 'Documentation',
           },
           {
             href: 'https://github.com/AmpersandTarski/Ampersand',
@@ -85,31 +85,15 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Documentation',
             items: [
               {
-                label: 'Docs',
-                to: '/docs/hello-world',
+                label: 'Documentation',
+                to: '/',
               },
             ],
           },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
+          
           {
             title: 'More',
             items: [
