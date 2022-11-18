@@ -37,6 +37,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [math],
           rehypePlugins: [katex],
@@ -44,6 +45,7 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        blog: false,
       }),
     ],
   ],
