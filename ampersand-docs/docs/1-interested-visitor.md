@@ -1,5 +1,4 @@
 ---
-slug: '/interested'
 id: interested-visitor
 ---
 
