@@ -1,5 +1,6 @@
 ---
 slug: '/contributor'
+title: For contributors
 id: contributor
 ---
 

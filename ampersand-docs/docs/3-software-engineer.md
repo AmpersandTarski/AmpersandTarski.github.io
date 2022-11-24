@@ -1,5 +1,6 @@
 ---
 slug: '/softwareEngineer'
+title: For software engineers
 id: software-engineer
 ---
 

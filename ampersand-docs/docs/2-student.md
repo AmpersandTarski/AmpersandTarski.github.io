@@ -1,5 +1,6 @@
 ---
 id: student
+title: For students
 ---
 
 # What can I learn on this site?

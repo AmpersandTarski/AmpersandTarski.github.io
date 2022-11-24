@@ -1,4 +1,5 @@
 ---
+title: Just curious?
 id: interested-visitor
 ---
 
