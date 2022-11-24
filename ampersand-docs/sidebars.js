@@ -21,9 +21,15 @@ const sidebars = {
   // But you can create a sidebar manually
   tutorialSidebar: [
     'intro', // shorthand for a single doc
-    'student',
-    'software-engineer',
-    'interested-visitor',
+    {
+      type: 'category', 
+      label: 'getting started',
+      items: ['interested-visitor',
+        'student',
+        'software-engineer',
+        'scientist',
+        'contributor']
+    },
     { // category
       type: 'category',
       label: 'Ampersand compiler',
