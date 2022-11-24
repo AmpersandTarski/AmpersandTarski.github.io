@@ -1,3 +1,8 @@
+---
+slug: '/'
+id: student
+---
+
 # What can I learn on this site?
 If you are excited and eager to learn how to use Ampersand, you have come to the right place.
 You can learn about the language Ampersand, and learn how to make a prototype of an information system and run it.

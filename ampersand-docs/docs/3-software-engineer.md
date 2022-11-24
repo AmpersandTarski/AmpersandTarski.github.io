@@ -1,3 +1,8 @@
+---
+slug: '/'
+id: software-engineer
+---
+
 # How can I build an information system?
 If you want to build information systems with Ampersand, you have come to the right place.
 

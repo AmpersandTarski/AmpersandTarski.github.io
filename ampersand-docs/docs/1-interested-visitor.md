@@ -1,3 +1,8 @@
+---
+slug: '/'
+id: interested-visitor
+---
+
 # What is Ampersand all about?
 Thank you for being curious. 
 
