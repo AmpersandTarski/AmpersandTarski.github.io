@@ -1,6 +1,6 @@
 ---
-slug: '/'
-id: team-member
+slug: '/contributor'
+id: contributor
 ---
 
 # Contributing to Ampersand

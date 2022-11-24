@@ -1,5 +1,5 @@
 ---
-slug: '/'
+slug: '/student'
 id: student
 ---
 

@@ -1,5 +1,5 @@
 ---
-slug: '/'
+slug: '/softwareEngineer'
 id: software-engineer
 ---
 

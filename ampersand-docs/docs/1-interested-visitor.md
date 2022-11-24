@@ -1,5 +1,5 @@
 ---
-slug: '/'
+slug: '/interested'
 id: interested-visitor
 ---
 
