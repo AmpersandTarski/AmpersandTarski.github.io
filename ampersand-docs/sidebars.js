@@ -9,7 +9,7 @@
  Create as many sidebars as you want.
  */
 
-const ampersandCompilerSidebar = require('./docs/Ampersand/sidebar');
+const ampersandSidebars = require('/app/docs/Ampersand/sidebar');
 
 // @ts-check
 
@@ -17,39 +17,43 @@ const ampersandCompilerSidebar = require('./docs/Ampersand/sidebar');
 const sidebars = {
 
   mainSidebar: [
-    'intro', // shorthand for a single doc
+    'Ampersand/toc', // THE FIRST ITEM MUST BE A SINGLE FILE!
     {
-      label: 'getting started',
+      label: 'Introduction',
       type: 'category',
+      link: {
+        type: 'generated-index',
+        title: 'Welcome!',
+        description:
+          "Depending on your background, we can help you on your journey into Ampersand."
+      },
       collapsed: false,
       items: [
-        'interested-visitor',
         'student',
         'software-engineer',
         'scientist',
-        'contributor']
+        'contributor',
+        'interested-visitor',
+      ]
     },
     {
       label: 'Ampersand compiler',
       type: 'category',
-      items: ampersandCompilerSidebar.sidebar
+      collapsed: true,
+      items: ampersandSidebars.ampersandMainSidebar
     },
     {
-      label: 'getting started again (just for demo)',
+      label: 'Prototype',
       type: 'category',
-      link: {
-        type: 'generated-index',
-        title: 'Who do you think you are?',
-        description:
-          "Depending on your background, we can help you on your way into the documentation."
-      },
-      items: [
-        'interested-visitor',
-        'student',
-        'software-engineer',
-        'scientist',
-        'contributor']
-    }
+      collapsed: true,
+      items: ampersandSidebars.prototypeMainSidebar
+    },
+    {
+      label: 'Tools we use',
+      type: 'category',
+      collapsed: true,
+      items: ampersandSidebars.toolsWeUseMainSidebar
+    },
   ],
 };
 

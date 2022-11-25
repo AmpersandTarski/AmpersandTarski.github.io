@@ -16,7 +16,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/ampersand-logo.jpg',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -63,6 +63,13 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      themeConfig: {
+        docs: {
+          sidebar: {
+            autoCollapseCategories: true,
+          },
+        },
+      },
       navbar: {
         title: 'Ampersand',
         logo: {
@@ -71,14 +78,13 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
             label: 'Documentation',
+            to: '/',
+            position: 'left',
           },
           {
-            href: 'https://github.com/AmpersandTarski/Ampersand',
             label: 'GitHub',
+            href: 'https://github.com/AmpersandTarski',
             position: 'right',
           },
         ],
@@ -101,7 +107,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/AmpersandTarski/Ampersand',
+                href: 'https://github.com/AmpersandTarski',
               },
             ],
           },
