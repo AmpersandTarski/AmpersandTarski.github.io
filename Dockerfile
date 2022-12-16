@@ -14,8 +14,8 @@ RUN mkdir -p /app/docs
 
 # For local testing, this is the place to locally edit this dockerfile. 
 # 1) Comment out the specific RUN statement(s) for the repo you want to test your local changes:
-RUN unzip /tmp/Ampersand.zip 'Ampersand-development/docs/*' -d /tmp/Ampersand/ \
-    && cp -R /tmp/Ampersand/Ampersand-development/docs/ /app/docs/Ampersand
+RUN unzip /tmp/Ampersand.zip 'Ampersand-documentation/docs/*' -d /tmp/Ampersand/ \
+    && cp -R /tmp/Ampersand/Ampersand-documentation/docs/ /app/docs/Ampersand
 RUN unzip /tmp/prototype.zip 'prototype-main/docs/*' -d /tmp/prototype/ \
     && cp -R /tmp/prototype/prototype-main/docs/ /app/docs/Prototype
 RUN unzip /tmp/TheToolsWeUse.zip 'TheToolsWeUse-development/*' -d /tmp/TheToolsWeUse/ \
