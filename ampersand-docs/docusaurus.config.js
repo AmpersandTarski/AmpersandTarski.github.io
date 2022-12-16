@@ -12,11 +12,12 @@ const katex = require('rehype-katex');
 const config = {
   title: 'Ampersand Documentation',
   tagline: 'check out the latest compiler on https://github.com/AmpersandTarski/Ampersand/releases/latest',
-  url: 'https://ampersandtarski.github.io',
+  url: 'https://AmpersandTarski.github.io',
   baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/ampersand-logo.jpg',
+  trailingSlash: true,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
