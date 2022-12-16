@@ -17,4 +17,4 @@ Interested? Here are some frequently asked questions. Click for the answers.
 * [How is the Ampersand project being run?](Ampersand/governance/)
 * [What are the plans for the future?]
 * [What is needed?]
-* [Who are involved?](Ampersand/who-is-who/)
+* [Who are involved?]
