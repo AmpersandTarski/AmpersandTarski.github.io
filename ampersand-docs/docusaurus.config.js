@@ -14,8 +14,8 @@ const config = {
   tagline: 'check out the latest compiler on https://github.com/AmpersandTarski/Ampersand/releases/latest',
   url: 'https://ampersandtarski.github.io',
   baseUrl: '/',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
   favicon: 'img/ampersand-logo.jpg',
 
   // GitHub pages deployment config.

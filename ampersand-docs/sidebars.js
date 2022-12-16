@@ -37,6 +37,13 @@ const sidebars = {
       ]
     },
     {
+      label: 'Guides',
+      type: 'category',
+      collapsed: true,
+      items: ampersandSidebars.ampersandGuideElems.concat(
+             ampersandSidebars.prototypeGuideElems)
+    },
+    {
       label: 'Ampersand compiler',
       type: 'category',
       collapsed: true,
