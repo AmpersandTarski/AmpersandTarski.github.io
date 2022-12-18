@@ -47,8 +47,8 @@ const sidebars = {
       label: 'Reference materials',
       type: 'category',
       collapsed: true,
-      items: ampersandSidebars.ampersandReferenceElems.concat(
-        ampersandSidebars.prototypeReferenceElems)
+      items: ampersandSidebars.ampersandReferenceSidebar.concat(
+        ampersandSidebars.prototypeReferenceSidebar)
     },
     {
       label: 'Ampersand compiler',
@@ -56,12 +56,12 @@ const sidebars = {
       collapsed: true,
       items: ampersandSidebars.ampersandMainSidebar
     },
-    {
-      label: 'Prototype',
-      type: 'category',
-      collapsed: true,
-      items: ampersandSidebars.prototypeMainSidebar
-    },
+    // {
+    //   label: 'Prototype',
+    //   type: 'category',
+    //   collapsed: true,
+    //   items: ampersandSidebars.prototypeMainSidebar
+    // },
     {
       label: 'Tools we use',
       type: 'category',
