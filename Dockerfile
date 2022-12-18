@@ -15,20 +15,20 @@ RUN mkdir -p /app/docs
 # For local testing, this is the place to locally edit this dockerfile. 
 # 1) Comment out the specific RUN statement(s) for the repo you want to test your local changes:
 RUN unzip /tmp/Ampersand.zip 'Ampersand-documentation/docs/*' -d /tmp/ampersand/ \
-    && cp -R /tmp/Ampersand/Ampersand-documentation/docs/ /app/docs/ampersand
+    && cp -R /tmp/ampersand/Ampersand-documentation/docs/ /app/docs/ampersand
 RUN unzip /tmp/prototype.zip 'prototype-main/docs/*' -d /tmp/prototype/ \
     && cp -R /tmp/prototype/prototype-main/docs/ /app/docs/prototype
 RUN unzip /tmp/TheToolsWeUse.zip 'TheToolsWeUse-development/*' -d /tmp/the-tools-we-use/ \
-    && cp -R /tmp/TheToolsWeUse/TheToolsWeUse-development/ /app/docs/the-tools-we-use
+    && cp -R /tmp/the-tools-we-use/TheToolsWeUse-development/ /app/docs/the-tools-we-use
 
 # 2) Make sure you copy the entire docs directory of the specific repo to the /tmp folder here.
 #    you should do that before you give the instruction `docker compose up -d --build`, in your terminal.
 
 # The following lines will copy that stuff to the place it is required:
 # 3) uncomment the required COPY statement(s) below:
-# COPY ./tmp/Ampersand/ /app/docs/Ampersand
-# COPY ./tmp/prototype/ /app/docs/Prototype
-# COPY ./tmp/TheToolsWeUse/ /app/docs/TheToolsWeUse
+# COPY ./tmp/ampersand/ /app/docs/ampersand
+# COPY ./tmp/prototype/ /app/docs/prototype
+# COPY ./tmp/the-tools-we-use/ /app/docs/the-tools-we-use
 
 # Leave the statements below just as is, and you should be fine.
 COPY ampersand-docs/. /app/
