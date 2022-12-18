@@ -37,6 +37,13 @@ const sidebars = {
       ]
     },
     {
+      label: 'Theory & background',
+      type: 'category',
+      // We asume that all theory stuff is in the Ampersand repo
+      items: ampersandSidebars.ampersandTheorySidebar
+
+    },
+    {
       label: 'Guides',
       type: 'category',
       collapsed: true,
@@ -51,20 +58,16 @@ const sidebars = {
         ampersandSidebars.prototypeReferenceSidebar)
     },
     {
-      label: 'Ampersand compiler',
+      label: 'Other documents in Ampersand repo',
       type: 'category',
+      // These documents eventually have to move to one of the three main categories.
       collapsed: true,
       items: ampersandSidebars.ampersandMainSidebar
     },
-    // {
-    //   label: 'Prototype',
-    //   type: 'category',
-    //   collapsed: true,
-    //   items: ampersandSidebars.prototypeMainSidebar
-    // },
     {
-      label: 'Tools we use',
+      label: 'Other documents in Tools we use',
       type: 'category',
+      // These documents eventually have to move to one of the three main categories.
       collapsed: true,
       items: ampersandSidebars.toolsWeUseMainSidebar
     },
