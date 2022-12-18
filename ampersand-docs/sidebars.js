@@ -9,7 +9,7 @@
  Create as many sidebars as you want.
  */
 
-const ampersandSidebars = require('/app/docs/Ampersand/sidebar');
+const ampersandSidebars = require('/app/docs/ampersand/sidebar');
 
 // @ts-check
 
@@ -41,7 +41,7 @@ const sidebars = {
       type: 'category',
       collapsed: true,
       items: ampersandSidebars.ampersandGuideElems.concat(
-             ampersandSidebars.prototypeGuideElems)
+        ampersandSidebars.prototypeGuideElems)
     },
     {
       label: 'Ampersand compiler',

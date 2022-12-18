@@ -11,7 +11,7 @@ const katex = require('rehype-katex');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Ampersand Documentation',
-  tagline: 'check out the latest compiler on https://github.com/AmpersandTarski/Ampersand/releases/latest',
+  tagline: 'check out the latest compiler on https://github.com/AmpersandTarski/ampersand/releases/latest',
   url: 'https://AmpersandTarski.github.io',
   baseUrl: '/',
   onBrokenLinks: 'warn',
