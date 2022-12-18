@@ -40,8 +40,8 @@ const sidebars = {
       label: 'Guides',
       type: 'category',
       collapsed: true,
-      items: ampersandSidebars.ampersandGuideElems.concat(
-        ampersandSidebars.prototypeGuideElems)
+      items: ampersandSidebars.ampersandGuideSidebar.concat(
+        ampersandSidebars.prototypeGuideSidebar)
     },
     {
       label: 'Reference materials',
