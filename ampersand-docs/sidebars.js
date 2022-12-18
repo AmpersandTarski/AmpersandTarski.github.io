@@ -44,6 +44,13 @@ const sidebars = {
         ampersandSidebars.prototypeGuideElems)
     },
     {
+      label: 'Reference materials',
+      type: 'category',
+      collapsed: true,
+      items: ampersandSidebars.ampersandReferenceElems.concat(
+        ampersandSidebars.prototypeReferenceElems)
+    },
+    {
       label: 'Ampersand compiler',
       type: 'category',
       collapsed: true,
