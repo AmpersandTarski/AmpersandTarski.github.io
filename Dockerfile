@@ -31,7 +31,7 @@ RUN unzip /tmp/TheToolsWeUse.zip 'TheToolsWeUse-development/*' -d /tmp/TheToolsW
 # COPY ./tmp/TheToolsWeUse/ /app/docs/TheToolsWeUse
 
 # Leave the statements below just as is, and you should be fine.
-COPY ampersand-docs/ /app/
+COPY ampersand-docs/. /app/
 
 RUN npm run build
 
