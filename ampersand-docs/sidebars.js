@@ -17,7 +17,7 @@ const ampersandSidebars = require('/app/docs/ampersand/sidebar');
 const sidebars = {
 
   mainSidebar: [
-    'Ampersand/toc', // THE FIRST ITEM MUST BE A SINGLE FILE!
+    'ampersand/toc', // THE FIRST ITEM MUST BE A SINGLE FILE!
     {
       label: 'Introduction',
       type: 'category',
