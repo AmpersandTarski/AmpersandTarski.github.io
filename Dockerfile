@@ -16,8 +16,8 @@ RUN mkdir -p /app/docs
 # 1) Comment out the specific RUN statement(s) for the repo you want to test your local changes:
 RUN unzip /tmp/Ampersand.zip 'Ampersand-documentation/docs/*' -d /tmp/ampersand/ \
     && cp -R /tmp/ampersand/Ampersand-documentation/docs/ /app/docs/ampersand
-RUN unzip /tmp/prototype.zip 'prototype-main/docs/*' -d /tmp/prototype/ \
-    && cp -R /tmp/prototype/prototype-main/docs/ /app/docs/prototype
+RUN unzip /tmp/prototype.zip 'prototype-documentation/docs/*' -d /tmp/prototype/ \
+    && cp -R /tmp/prototype/prototype-documentation/docs/ /app/docs/prototype
 RUN unzip /tmp/TheToolsWeUse.zip 'TheToolsWeUse-development/*' -d /tmp/the-tools-we-use/ \
     && cp -R /tmp/the-tools-we-use/TheToolsWeUse-development/ /app/docs/the-tools-we-use
 
