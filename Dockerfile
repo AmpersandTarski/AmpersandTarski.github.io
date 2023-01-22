@@ -7,7 +7,7 @@ COPY ampersand-docs/package.json ampersand-docs/package-lock.json /app/
 RUN npm install
 
 ADD https://github.com/AmpersandTarski/ampersand/archive/refs/heads/documentation.zip /tmp/Ampersand.zip
-ADD https://github.com/AmpersandTarski/prototype/archive/refs/heads/main.zip /tmp/prototype.zip
+ADD https://github.com/AmpersandTarski/prototype/archive/refs/heads/documentation.zip /tmp/prototype.zip
 ADD https://github.com/AmpersandTarski/TheToolsWeUse/archive/refs/heads/development.zip /tmp/TheToolsWeUse.zip
 
 RUN mkdir -p /app/docs
