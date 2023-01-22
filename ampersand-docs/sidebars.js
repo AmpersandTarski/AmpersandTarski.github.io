@@ -10,7 +10,7 @@
  */
 
 const ampersandSidebars = require('/app/docs/ampersand/sidebar');
-
+const prototypeSidebars = require('/app/docs/prototype/sidebar');
 // @ts-check
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
@@ -48,7 +48,7 @@ const sidebars = {
       type: 'category',
       collapsed: true,
       items: ampersandSidebars.ampersandGuideSidebar.concat(
-        ampersandSidebars.prototypeGuideSidebar),
+        prototypeSidebars.prototypeGuideSidebar),
       link: {
         type: 'generated-index',
         title: 'Guides',
@@ -61,7 +61,7 @@ const sidebars = {
       type: 'category',
       collapsed: true,
       items: ampersandSidebars.ampersandReferenceSidebar.concat(
-        ampersandSidebars.prototypeReferenceSidebar),
+        prototypeSidebars.prototypeReferenceSidebar),
       link: {
         type: 'generated-index',
         title: 'Reference materials'
