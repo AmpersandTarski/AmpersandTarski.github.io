@@ -24,7 +24,7 @@ const sidebars = {
         type: 'generated-index',
         title: 'Welcome!',
         description:
-        "Depending on your background, we can help you on your journey into Ampersand."
+          "Depending on your background, we can help you on your journey into Ampersand."
       },
       collapsed: false,
       // We asume that all landingpages are in the Ampersand repo
@@ -34,30 +34,46 @@ const sidebars = {
       label: 'Theory & background',
       type: 'category',
       // We asume that all theory stuff is in the Ampersand repo
-      items: ampersandSidebars.ampersandTheorySidebar
-      
+      items: ampersandSidebars.ampersandTheorySidebar,
+      link: {
+        type: 'generated-index',
+        title: 'Theory & background',
+        description:
+          "Here you will find all kind of how-to instructions to help you get going with Ampersand."
+      }
+
     },
     {
       label: 'Guides',
       type: 'category',
       collapsed: true,
       items: ampersandSidebars.ampersandGuideSidebar.concat(
-        ampersandSidebars.prototypeGuideSidebar)
-      },
-      {
-        label: 'Reference materials',
-        type: 'category',
-        collapsed: true,
-        items: ampersandSidebars.ampersandReferenceSidebar.concat(
-          ampersandSidebars.prototypeReferenceSidebar)
-        },
-        {
-          label: 'Other documents in Ampersand repo',
-          type: 'category',
-          // These documents eventually have to move to one of the three main categories.
-          collapsed: true,
-          items: ampersandSidebars.ampersandMainSidebar
-        },
+        ampersandSidebars.prototypeGuideSidebar),
+      link: {
+        type: 'generated-index',
+        title: 'Guides',
+        description:
+          "Here you will find all kind of how-to instructions to help you get going with Ampersand."
+      }
+    },
+    {
+      label: 'Reference materials',
+      type: 'category',
+      collapsed: true,
+      items: ampersandSidebars.ampersandReferenceSidebar.concat(
+        ampersandSidebars.prototypeReferenceSidebar),
+      link: {
+        type: 'generated-index',
+        title: 'Reference materials'
+      }
+    },
+    {
+      label: 'Other documents in Ampersand repo',
+      type: 'category',
+      // These documents eventually have to move to one of the three main categories.
+      collapsed: true,
+      items: ampersandSidebars.ampersandMainSidebar
+    },
     {
       label: 'Other documents in Tools we use',
       type: 'category',
@@ -65,8 +81,7 @@ const sidebars = {
       collapsed: true,
       items: ampersandSidebars.toolsWeUseMainSidebar
     },
-    'ampersand/toc', // THE FIRST ITEM MUST BE A SINGLE FILE!
-  ],
+  ].concat(ampersandSidebars.oldTableOfContent),
 };
 
 module.exports = sidebars;
