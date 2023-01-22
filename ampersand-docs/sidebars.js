@@ -28,13 +28,8 @@ const sidebars = {
           "Depending on your background, we can help you on your journey into Ampersand."
       },
       collapsed: false,
-      items: [
-        'student',
-        'software-engineer',
-        'scientist',
-        'contributor',
-        'interested-visitor',
-      ]
+      // We asume that all landingpages are in the Ampersand repo
+      items: ampersandSidebars.ampersandLandingpagesSidebar
     },
     {
       label: 'Theory & background',
