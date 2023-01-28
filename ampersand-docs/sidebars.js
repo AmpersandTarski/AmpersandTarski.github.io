@@ -21,6 +21,7 @@ const sidebars = {
       label: 'Introduction',
       type: 'category',
       link: {
+        slug: '/',
         type: 'generated-index',
         title: 'Welcome!',
         description:
