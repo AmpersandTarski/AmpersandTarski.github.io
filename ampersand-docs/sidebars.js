@@ -11,7 +11,7 @@
 
 const ampersandSidebars = require('/app/docs/ampersand/sidebar');
 const prototypeSidebars = require('/app/docs/prototype/sidebar');
-const prototypeFrontendSidebars = require('/app/docs/prototypeFrontend/sidebar');
+const prototypeFrontendSidebars = require('/app/docs/prototype-frontend/sidebar');
 // @ts-check
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
