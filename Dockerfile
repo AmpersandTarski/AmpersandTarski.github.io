@@ -33,6 +33,7 @@ RUN unzip /tmp/TheToolsWeUse.zip 'TheToolsWeUse-development/*' -d /tmp/the-tools
 # Leave the statements below just as is, and you should be fine.
 COPY ampersand-docs/. /app/
 
+RUN npx update-browserslist-db@latest
 RUN npm run build
 
 FROM nginx:stable-alpine
