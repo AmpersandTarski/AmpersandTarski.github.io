@@ -5,6 +5,7 @@ WORKDIR /app
 COPY ampersand-docs/package.json ampersand-docs/package-lock.json /app/
 
 RUN npm install
+RUN npx update-browserslist-db@latest
 
 ADD https://github.com/AmpersandTarski/ampersand/archive/refs/heads/documentation.zip /tmp/Ampersand.zip
 ADD https://github.com/AmpersandTarski/prototype/archive/refs/heads/documentation.zip /tmp/prototype.zip
@@ -33,7 +34,6 @@ RUN unzip /tmp/TheToolsWeUse.zip 'TheToolsWeUse-development/*' -d /tmp/the-tools
 # Leave the statements below just as is, and you should be fine.
 COPY ampersand-docs/. /app/
 
-RUN npx update-browserslist-db@latest
 RUN npm run build
 
 FROM nginx:stable-alpine
