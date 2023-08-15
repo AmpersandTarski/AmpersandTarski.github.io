@@ -10,6 +10,7 @@ RUN npx update-browserslist-db@latest
 ADD https://github.com/AmpersandTarski/ampersand/archive/refs/heads/documentation.zip /tmp/Ampersand.zip
 ADD https://github.com/AmpersandTarski/prototype/archive/refs/heads/documentation.zip /tmp/prototype.zip
 ADD https://github.com/AmpersandTarski/TheToolsWeUse/archive/refs/heads/development.zip /tmp/TheToolsWeUse.zip
+ADD https://github.com/AmpersandTarski/RAP/archive/refs/heads/documentation.zip /tmp/RAP.zip
 
 RUN mkdir -p /app/docs
 
@@ -21,6 +22,8 @@ RUN unzip /tmp/prototype.zip 'prototype-documentation/docs/*' -d /tmp/prototype/
     && cp -R /tmp/prototype/prototype-documentation/docs/ /app/docs/prototype
 RUN unzip /tmp/TheToolsWeUse.zip 'TheToolsWeUse-development/*' -d /tmp/the-tools-we-use/ \
     && cp -R /tmp/the-tools-we-use/TheToolsWeUse-development/ /app/docs/the-tools-we-use
+RUN unzip /tmp/RAP.zip 'RAP/*' -d /tmp/rap/ \
+    && cp -R /tmp/RAP/docs/ /app/docs/rap
 
 # 2) Make sure you copy the entire docs directory of the specific repo to the /tmp folder here.
 #    you should do that before you give the instruction `docker compose up -d --build`, in your terminal.
@@ -30,6 +33,7 @@ RUN unzip /tmp/TheToolsWeUse.zip 'TheToolsWeUse-development/*' -d /tmp/the-tools
 # COPY ./tmp/ampersand/ /app/docs/ampersand
 # COPY ./tmp/prototype/ /app/docs/prototype
 # COPY ./tmp/the-tools-we-use/ /app/docs/the-tools-we-use
+# COPY ./tmp/rap/ /app/docs/rap
 
 # Leave the statements below just as is, and you should be fine.
 COPY ampersand-docs/. /app/
