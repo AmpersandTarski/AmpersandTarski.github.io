@@ -22,7 +22,7 @@ RUN unzip /tmp/prototype.zip 'prototype-documentation/docs/*' -d /tmp/prototype/
     && cp -R /tmp/prototype/prototype-documentation/docs/ /app/docs/prototype
 RUN unzip /tmp/TheToolsWeUse.zip 'TheToolsWeUse-development/*' -d /tmp/the-tools-we-use/ \
     && cp -R /tmp/the-tools-we-use/TheToolsWeUse-development/ /app/docs/the-tools-we-use
-RUN unzip /tmp/RAP.zip 'RAP/*' -d /tmp/rap/ \
+RUN unzip /tmp/RAP.zip 'RAP-documentation/docs/*' -d /tmp/rap/ \
     && cp -R /tmp/rap/docs/ /app/docs/rap
 
 # 2) Make sure you copy the entire docs directory of the specific repo to the /tmp folder here.
