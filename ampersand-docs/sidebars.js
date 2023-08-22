@@ -85,7 +85,7 @@ const sidebars = {
       collapsed: true,
       items: ampersandSidebars.toolsWeUseMainSidebar
     },
-  ].concat(ampersandSidebars.oldTableOfContent),
+  ],
 };
 
 module.exports = sidebars;
