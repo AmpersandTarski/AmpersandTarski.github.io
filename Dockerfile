@@ -9,7 +9,6 @@ RUN npx update-browserslist-db@latest
 
 ADD https://github.com/AmpersandTarski/ampersand/archive/refs/heads/documentation.zip /tmp/Ampersand.zip
 ADD https://github.com/AmpersandTarski/prototype/archive/refs/heads/documentation.zip /tmp/prototype.zip
-ADD https://github.com/AmpersandTarski/TheToolsWeUse/archive/refs/heads/development.zip /tmp/TheToolsWeUse.zip
 ADD https://github.com/AmpersandTarski/RAP/archive/refs/heads/documentation.zip /tmp/RAP.zip
 
 RUN mkdir -p /app/docs
@@ -20,8 +19,6 @@ RUN unzip /tmp/Ampersand.zip 'Ampersand-documentation/docs/*' -d /tmp/ampersand/
     && cp -R /tmp/ampersand/Ampersand-documentation/docs/ /app/docs/ampersand
 RUN unzip /tmp/prototype.zip 'prototype-documentation/docs/*' -d /tmp/prototype/ \
     && cp -R /tmp/prototype/prototype-documentation/docs/ /app/docs/prototype
-RUN unzip /tmp/TheToolsWeUse.zip 'TheToolsWeUse-development/*' -d /tmp/the-tools-we-use/ \
-    && cp -R /tmp/the-tools-we-use/TheToolsWeUse-development/ /app/docs/the-tools-we-use
 RUN unzip /tmp/RAP.zip 'RAP-documentation/docs/*' -d /tmp/rap/ \
     && cp -R /tmp/rap/RAP-documentation/docs/ /app/docs/rap
 

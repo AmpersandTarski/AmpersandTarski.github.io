@@ -11,7 +11,7 @@
 
 const ampersandSidebars = require('/app/docs/ampersand/sidebar');
 const prototypeSidebars = require('/app/docs/prototype/sidebar');
-const rapSidebars       = require('/app/docs/rap/sidebar');
+const rapSidebars = require('/app/docs/rap/sidebar');
 // @ts-check
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
@@ -77,13 +77,6 @@ const sidebars = {
       // These documents eventually have to move to one of the three main categories.
       collapsed: true,
       items: ampersandSidebars.ampersandMainSidebar
-    },
-    {
-      label: 'Other documents in Tools we use',
-      type: 'category',
-      // These documents eventually have to move to one of the three main categories.
-      collapsed: true,
-      items: ampersandSidebars.toolsWeUseMainSidebar
     },
   ],
 };
