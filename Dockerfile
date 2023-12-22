@@ -8,8 +8,8 @@ RUN npm install
 RUN npx update-browserslist-db@latest
 
 ADD https://github.com/AmpersandTarski/ampersand/archive/refs/heads/documentation.zip /tmp/Ampersand.zip
-ADD https://github.com/AmpersandTarski/RAP/archive/refs/heads/documentation.zip /tmp/RAP.zip
-# For prototype repo we use the main branch
+# For prototype and RAP repos we use the main branch
+ADD https://github.com/AmpersandTarski/RAP/archive/refs/heads/main.zip /tmp/RAP.zip
 ADD https://github.com/AmpersandTarski/prototype/archive/refs/heads/main.zip /tmp/prototype.zip
 
 RUN mkdir -p /app/docs
@@ -20,8 +20,8 @@ RUN unzip /tmp/Ampersand.zip 'Ampersand-documentation/docs/*' -d /tmp/ampersand/
     && cp -R /tmp/ampersand/Ampersand-documentation/docs/ /app/docs/ampersand
 RUN unzip /tmp/prototype.zip 'prototype-main/docs/*' -d /tmp/prototype/ \
     && cp -R /tmp/prototype/prototype-main/docs/ /app/docs/prototype
-RUN unzip /tmp/RAP.zip 'RAP-documentation/docs/*' -d /tmp/rap/ \
-    && cp -R /tmp/rap/RAP-documentation/docs/ /app/docs/rap
+RUN unzip /tmp/RAP.zip 'RAP-main/docs/*' -d /tmp/rap/ \
+    && cp -R /tmp/rap/RAP-main/docs/ /app/docs/rap
 
 # 2) Make sure you copy the entire docs directory of the specific repo to the /tmp folder here.
 #    you should do that before you give the instruction `docker compose up -d --build`, in your terminal.
