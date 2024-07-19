@@ -1,0 +1,32 @@
+FROM node:lts as build
+# This Dockerfile is for locally testing the documentation.
+# It is derived from Dockerfile in the root of the repository, which is used for building the documentation in production.
+
+WORKDIR /app
+
+COPY ampersand-docs/package.json ampersand-docs/package-lock.json /app/
+
+RUN npm install
+RUN npx update-browserslist-db@latest
+
+RUN mkdir -p /app/docs
+
+#    Make sure you copy the entire docs directory of the specific repo to the /tmp folder here.
+#    you should do that before you give the instruction `docker compose up -d --build`, in your terminal.
+#    Use commands such as:
+#      >  cp -R ~/git/Ampersand/docs tmp/ampersand
+#      >  cp -R ~/git/RAP/docs tmp/rap
+#      >  cp -R ~/git/prototype/docs tmp/prototype
+# The following lines will copy that stuff from your tmp into the container, right where it is required:
+COPY ./tmp/ampersand/ /app/docs/ampersand
+COPY ./tmp/prototype/ /app/docs/prototype
+COPY ./tmp/rap/ /app/docs/rap
+
+COPY ampersand-docs/. /app/
+
+RUN npm run build
+
+FROM nginx:stable-alpine
+
+COPY --from=build /app/build /usr/share/nginx/html
+COPY ./nginx-conf /etc/nginx/conf.d

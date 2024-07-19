@@ -2,6 +2,8 @@ version: "3"
 
 services:
   docusaurus:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - 80:80

@@ -30,7 +30,6 @@ RUN unzip /tmp/RAP.zip 'RAP-main/docs/*' -d /tmp/rap/ \
 # 3) uncomment the required COPY statement(s) below:
 # COPY ./tmp/ampersand/ /app/docs/ampersand
 # COPY ./tmp/prototype/ /app/docs/prototype
-# COPY ./tmp/the-tools-we-use/ /app/docs/the-tools-we-use
 # COPY ./tmp/rap/ /app/docs/rap
 
 # Leave the statements below just as is, and you should be fine.
