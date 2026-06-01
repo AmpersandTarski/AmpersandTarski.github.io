@@ -71,13 +71,6 @@ const sidebars = {
         title: 'Reference materials'
       }
     },
-    {
-      label: 'Other documents in Ampersand repo',
-      type: 'category',
-      // These documents eventually have to move to one of the three main categories.
-      collapsed: true,
-      items: ampersandSidebars.ampersandMainSidebar
-    },
   ],
 };
 
