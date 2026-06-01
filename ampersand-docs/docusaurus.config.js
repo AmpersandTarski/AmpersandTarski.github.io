@@ -43,6 +43,18 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           remarkPlugins: [math],
           rehypePlugins: [katex],
+          // Do not publish internal working notes. Any file or folder whose
+          // name starts with '_' (e.g. docs/_notes/) is treated as a partial
+          // and never becomes a public route or search-index entry. These are
+          // the Docusaurus defaults, made explicit here so the policy is
+          // visible: source repos can keep developer scratch notes in docs/
+          // without leaking them onto the site.
+          exclude: [
+            '**/_*.{js,jsx,ts,tsx,md,mdx}',
+            '**/_*/**',
+            '**/*.test.{js,jsx,ts,tsx}',
+            '**/__tests__/**',
+          ],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
